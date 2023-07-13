@@ -1,6 +1,6 @@
 #main-title{
   text-align: center;
-  margin: 15px 0 30px;
+  margin: 150px 0 30px;
 }
 
 
@@ -9,10 +9,11 @@
   margin: 0 auto;
 }
 
+
 #contacts-table thead{
-  color: #FFF;
-  background-color: #007BFF;
+  padding: 10px;
 }
+
 
 #empty-list-text{
   text-align: center;
