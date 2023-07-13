@@ -36,9 +36,31 @@ if(!empty($data)){
     }
   }
   
-  if($data["type"] === "edit"){
+  elseif($data["type"] === "edit"){
     
+    $name = $data['name'];
+    $phone = $data['phone'];
+    $obs = $data['observation'];
+    $id = $data['id'];
+
+    $query = "UPDATE contacts
+              SET name = :name, phone = :phone, observation = :observation WHERE id = :id";
+
+    $stmt = $conn->prepare($query);
     
+    $stmt->bindParam(":name", $name);
+    $stmt->bindParam(":phone", $phone);
+    $stmt->bindParam(":observation", $obs);
+    $stmt->bindParam(":id", $id);
+    
+    try {
+      $stmt->execute();
+      $_SESSION["msg"] = "Contato atualizado com sucesso!";
+    } catch (PDOException $e) {
+      //erro conexao
+      $error = $e->getMessage();
+      echo "Error: $error";
+    }
   }
   
   //redirect Home

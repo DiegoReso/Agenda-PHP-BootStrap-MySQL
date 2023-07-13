@@ -3,3 +3,10 @@
 @import 'show.css';
 @import 'backBtn.css';
 @import 'create.css';
+
+
+@media (max-width: 480px) {
+  #home-link{
+    display: none;
+  }
+}
