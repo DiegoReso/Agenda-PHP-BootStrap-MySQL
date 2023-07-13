@@ -17,7 +17,7 @@ include_once("templates/header.php")
     </div>
     <div class="form-group">
       <label for="observation">Observações</label>
-      <textarea type="text" id="observations" name="observations" class="form-control"
+      <textarea type="text" id="observation" name="observation" class="form-control"
         placeholder="Insira as observações"></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Cadastrar</button>
