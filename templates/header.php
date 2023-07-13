@@ -1,6 +1,15 @@
 <?php 
 include_once("config/url.php");
-include_once("templates/header.php");
+include_once("config/process.php");
+
+//limpa a mensagem
+
+
+if(isset($_SESSION['msg'])){
+  $printMsg = $_SERVER['msg'];
+  $_SESSION['msg'] = '';
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +25,7 @@ include_once("templates/header.php");
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="<?=$BASE_URL?>styles/style.css">
+  <link rel="stylesheet" href="<?=$BASE_URL?>/styles/style.css">
 </head>
 
 <body>
