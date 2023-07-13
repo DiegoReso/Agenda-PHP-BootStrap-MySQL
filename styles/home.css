@@ -55,6 +55,10 @@
   margin-right: 10px;
 }
 
+.delete-form{
+  display: inline-block;
+}
+
 .delete-icon{
   color: #bd2130;
 }

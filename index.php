@@ -28,14 +28,19 @@
         <td class="actions">
           <a href="<?= $BASE_URL?>show.php?id=<?= $contact['id']?>"><i class=" fas fa-eye check-icon"></i></a>
           <a href="<?= $BASE_URL?>edit.php?id=<?= $contact['id']?>"><i class="far fa-edit edit-icon"></i></a>
-          <button type="submit" class="delete-btn"><i class="fas fa-times delete-icon"></i></button>
+
+          <form class="delete-form" action="<?= $BASE_URL?>config/process.php" method="POST">
+            <input type="hidden" name="type" value="delete">
+            <input type="hidden" name="id" value="<?=$contact['id']?>">
+            <button type="submit" class="delete-btn"><i class="fas fa-times delete-icon"></i></button>
+          </form>
         </td>
       </tr>
       <?php endforeach; ?>
     </tbody>
   </table>
   <?php else: ?>
-  <p id=" empty-list-text">Ainda nao ha contatos na sua agenda, <a href="<?= $BASE_URL?>create.php">Crie seu primeiro
+  <p id=" empty-list-text">Ainda não há contatos na sua agenda, <a href="<?= $BASE_URL?>create.php">Crie seu primeiro
       contato!</a></p>
   <?php endif;?>
 </div>
